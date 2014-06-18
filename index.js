@@ -5,6 +5,10 @@
  * @returns {Child}
  */
 module.exports = function(parentClass, childPrototype) {
+  
+  if (typeof parentClass !== 'function') {
+		throw new Error ('Parent class is not a function');
+	}
 
   //create the child class
   function Child() {
