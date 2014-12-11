@@ -1,4 +1,5 @@
 {
-  "name": "digitaledgeit-extend",
-  "version": "0.1.0"
+  "name": "git tag",
+  "version": "1.0.0",
+	"main": "lib/extend.js"
 }

@@ -1,4 +1,14 @@
 {
-  "name": "extend",
-  "scripts": ["index.js"]
+  "name": "extend-class",
+  "scripts": [
+    "lib/extend.js"
+  ],
+	"development": {
+		"scripts": [
+			"example/animals.js"
+		],
+		"dependencies": {
+			"component/assert": "~0.5.0"
+		}
+	}
 }
