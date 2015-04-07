@@ -1,5 +1,20 @@
 {
   "name": "extend-class",
-  "version": "1.0.1",
-  "main": "extend.js"
+  "description": "Creates a new class inheriting the methods and properties of a parent class, and copies a new set of methods and properties to the child class.",
+  "version": "1.0.2",
+  "keywords": [
+    "class",
+    "extend",
+    "inherit",
+    "prototype",
+    "browser"
+  ],
+  "main": "extend.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:digitaledgeit/js-extend-class.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitaledgeit/js-extend-class/issues"
+  }
 }
