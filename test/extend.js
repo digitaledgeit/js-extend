@@ -68,7 +68,7 @@ describe('extend', function() {
 
 		function Parent() { this.klass = 'Parent'; }
 		var Child = extend(Parent, {
-			constructor: function() {
+			construct: function() {
 				this.klass = 'Child';
 			}
 		});
@@ -85,7 +85,7 @@ describe('extend', function() {
 			this.klass.push('Parent');
 		}
 		var Child = extend(Parent, {
-			constructor: function() {
+			construct: function() {
 				this.klass = this.klass || [];
 				this.klass.push('Child');
 				Parent.call(this);

@@ -1,7 +1,7 @@
 {
   "name": "extend-class",
   "description": "Creates a new class inheriting the methods and properties of a parent class, and copies a new set of methods and properties to the child class.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "class",
     "extend",
