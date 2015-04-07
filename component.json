@@ -1,7 +1,7 @@
 {
   "name": "extend-class",
   "scripts": [
-    "lib/extend.js"
+    "extend.js"
   ],
 	"development": {
 		"scripts": [

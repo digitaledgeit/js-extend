@@ -19,15 +19,15 @@ describe('extend', function() {
 
 		var Child = extend(Parent);
 
-		assert(Parent.prototype.GENDER_MALE,    Child.prototype.GENDER_MALE);
-		assert(Parent.prototype.GENDER_FEMALE,  Child.prototype.GENDER_FEMALE);
-		assert(Parent.prototype.sleep,          Child.prototype.sleep);
+		assert.equal(Parent.prototype.GENDER_MALE,    Child.prototype.GENDER_MALE);
+		assert.equal(Parent.prototype.GENDER_FEMALE,  Child.prototype.GENDER_FEMALE);
+		assert.equal(Parent.prototype.sleep,          Child.prototype.sleep);
 
 		var child = new Child();
 
-		assert(Parent.prototype.GENDER_MALE,    child.GENDER_MALE);
-		assert(Parent.prototype.GENDER_FEMALE,  child.GENDER_FEMALE);
-		assert(Parent.prototype.sleep,          child.sleep);
+		assert.equal(Parent.prototype.GENDER_MALE,    child.GENDER_MALE);
+		assert.equal(Parent.prototype.GENDER_FEMALE,  child.GENDER_FEMALE);
+		assert.equal(Parent.prototype.sleep,          child.sleep);
 
 	});
 
@@ -42,15 +42,15 @@ describe('extend', function() {
 
 		var Child = extend(Parent, properties);
 
-		assert(properties.GENDER_MALE,    Child.prototype.GENDER_MALE);
-		assert(properties.GENDER_FEMALE,  Child.prototype.GENDER_FEMALE);
-		assert(properties.sleep,          Child.prototype.sleep);
+		assert.equal(properties.GENDER_MALE,    Child.prototype.GENDER_MALE);
+		assert.equal(properties.GENDER_FEMALE,  Child.prototype.GENDER_FEMALE);
+		assert.equal(properties.sleep,          Child.prototype.sleep);
 
 		var child = new Child();
 
-		assert(properties.GENDER_MALE,    child.GENDER_MALE);
-		assert(properties.GENDER_FEMALE,  child.GENDER_FEMALE);
-		assert(properties.sleep,          child.sleep);
+		assert.equal(properties.GENDER_MALE,    child.GENDER_MALE);
+		assert.equal(properties.GENDER_FEMALE,  child.GENDER_FEMALE);
+		assert.equal(properties.sleep,          child.sleep);
 
 	});
 
@@ -60,11 +60,11 @@ describe('extend', function() {
 		var Child = extend(Parent);
 
 		var child = new Child();
-		assert('Parent', child.klass);
+		assert.equal('Parent', child.klass);
 
 	});
 
-	it('when I provide a constructor, new child should call the child constructor', function() {
+	it('when I provide a constructor, new child should call the child constructor and not the parent constructor', function() {
 
 		function Parent() { this.klass = 'Parent'; }
 		var Child = extend(Parent, {
@@ -74,7 +74,7 @@ describe('extend', function() {
 		});
 
 		var child = new Child();
-		assert('Child', child.klass);
+		assert.equal('Child', child.klass);
 
 	});
 
@@ -88,12 +88,13 @@ describe('extend', function() {
 			constructor: function() {
 				this.klass = this.klass || [];
 				this.klass.push('Child');
+				Parent.call(this);
 			}
 		});
 
 		var child = new Child();
-		assert('Child',   child.klass[0]);
-		assert('Parent',  child.klass[1]);
+		assert.equal('Child',   child.klass[0]);
+		assert.equal('Parent',  child.klass[1]);
 
 	});
 

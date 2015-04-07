@@ -4,7 +4,7 @@ Creates a new class inheriting the methods and properties of a parent class, and
 
  - Uses [prototypal inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
  - The `instanceof` operator works
- - If present, a constructor named `constructor` is called
+ - If present, a constructor named `construct` is called
 
 **Note:** Large prototype chains can impact performance. Use sparingly. 
 

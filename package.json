@@ -1,5 +1,5 @@
 {
   "name": "extend-class",
   "version": "1.0.0",
-	"main": "lib/extend.js"
+  "main": "extend.js"
 }
