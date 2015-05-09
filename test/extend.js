@@ -98,4 +98,30 @@ describe('extend', function() {
 
 	});
 
+  it('should return a value from the parent when called as a function', function() {
+
+    function Parent() {
+      return 'Hello World!';
+    }
+    var Child = extend(Parent);
+
+    assert.equal(Child(), 'Hello World!');
+
+  });
+
+  it('should return a value from the child when called as a function', function() {
+
+    function Parent() {
+      return 'Hello World!';
+    }
+    var Child = extend(Parent, {
+      construct: function() {
+        return 'Oh hai guys!';
+      }
+    });
+
+    assert.equal(Child(), 'Oh hai guys!');
+
+  });
+
 });

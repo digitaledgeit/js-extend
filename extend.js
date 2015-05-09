@@ -13,9 +13,9 @@ module.exports = function(parentClass, childPrototype) {
   //create the child class
   function Child() {
     if (childPrototype && childPrototype.construct) {
-	    childPrototype.construct.apply(this, arguments);
+	    return childPrototype.construct.apply(this, arguments);
     } else {
-      parentClass.apply(this, arguments);
+      return parentClass.apply(this, arguments);
     }
   }
 
